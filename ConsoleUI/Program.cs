@@ -1,6 +1,5 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.Concrete.InMemory;
 using System;
 
 namespace ConsoleUI
@@ -13,9 +12,11 @@ namespace ConsoleUI
             foreach (var car in carManager.GetCarsByBrandId(3))
             {
                 Console.WriteLine(car.BrandId);
-
-
             }
+
+
+
+
         }
     }
 }
