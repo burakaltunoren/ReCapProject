@@ -3,7 +3,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-    interface IColorDal : IEntityRepository<Color>
+    public interface IColorDal : IEntityRepository<Color>
     {
     }
 }

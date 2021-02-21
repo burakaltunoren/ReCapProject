@@ -17,9 +17,14 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public IEnumerable<Car> GetByColorId()
+        public void Add(Car car)
         {
-            throw new NotImplementedException();
+            _carDal.Add(car);
+        }
+
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
         }
 
         public List<Car> GetAll()
@@ -27,51 +32,21 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<Car> GetCarsByBrandId(int id)
-        {
-            return _carDal.GetAll(p=>p.BrandId == id);
-        }
-
-        public List<Car> GetByColorId(int id)
-        {
-            return _carDal.GetAll(p=>p.ColorId == id);
-        }
-
-
-
-        public void Add(Car car)
-        {
-            if (car.DailyPrice > 0 && car.Description.Length > 2)
-            {
-                _carDal.Add(car);
-                Console.WriteLine("The Car is Added");
-            }
-            else
-            {
-                Console.WriteLine("The Car is not Added");
-            }
-        }
-
-        public List<Car> Delete(int id)
-        {
-            return _carDal.GetAll(p=>p.Id == id);
-        }
-
-        public List<Car> GetByDailyPrice(decimal min, decimal max)
-        {
-            return _carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
-        }
-
         public List<CarDetailDto> GetCarDetails()
         {
             return _carDal.GetCarDetails();
         }
 
-        public List<Car> Delete(Car car)
+       
+
+        public List<Car> GetCarsByCarId(int carId)
         {
-            return _carDal.GetAll(p => p.Id == car.Id);
-            
+            return _carDal.GetAll(c=>c.Id == carId);
         }
 
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
+        }
     }
 }
