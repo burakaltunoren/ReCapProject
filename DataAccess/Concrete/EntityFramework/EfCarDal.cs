@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCarDal : EfEntityRepositoryBase<Car, ReCapDbContext>, ICarDal
     {
-        public void Delete(int ıd)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  Id = ca.Id,
                                  ColorName = co.ColorName,
                                  BrandName = br.BrandName,
-                                 DailyPrice = ca.DailyPrice
+                                 DailyPrice = ca.DailyPrice,
+                                 ModelYear = ca.ModelYear
                              };
                 return result.ToList();
 

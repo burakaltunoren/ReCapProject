@@ -32,21 +32,27 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public List<CarDetailDto> GetCarDetails()  // bu satırdaki GetCarDetails Business abstract -ICarService'den gelir.
         {
-            return _carDal.GetCarDetails();
+            return _carDal.GetCarDetails();    // Buradaki GetCarDetails ise ICarDal tarafından gelir.
         }
 
-       
+        public List<Car> GetCarsByBrandId(int brandId)
+        {
+            return _carDal.GetAll(c => c.BrandId == brandId);
+        }
+
 
         public List<Car> GetCarsByCarId(int carId)
         {
-            return _carDal.GetAll(c=>c.Id == carId);
+            return _carDal.GetAll(c => c.Id == carId);
         }
 
         public void Update(Car car)
         {
             _carDal.Update(car);
         }
+
+        
     }
 }

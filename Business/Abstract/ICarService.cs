@@ -10,10 +10,12 @@ namespace Business.Abstract
     {
         List<Car> GetAll();
         List<Car> GetCarsByCarId(int carId);
+        List<Car> GetCarsByBrandId(int brandId);
         List<CarDetailDto> GetCarDetails();
         void Add(Car car);
         void Delete(Car car);
         void Update(Car car);
+        
 
 
 
