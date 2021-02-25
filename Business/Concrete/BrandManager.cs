@@ -17,27 +17,27 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
-        public void Add(Brand brand)
+        public void Add(Brand brand)        //Program.cs yazıldı
         {
             _brandDal.Add(brand);
         }
 
-        public void Delete(Brand brand)
+        public void Delete(Brand brand)     //Program.cs yazıldı
         {
             _brandDal.Delete(brand);
         }
 
-        public List<Brand> GetAll()
+        public List<Brand> GetAll()         //Program.cs yazıldı
         {
            return _brandDal.GetAll();
         }
 
-        public Brand GetById(int id)
+        public Brand GetById(int id)        //Program.cs yazıldı
         {
             return _brandDal.Get(p=>p.Id == id);
         }
 
-        public void Update(Brand brand)
+        public void Update(Brand brand)     //Program.cs yazıldı
         {
             _brandDal.Update(brand);
         }

@@ -16,17 +16,17 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
-        public void Add(Color color)
+        public void Add(Color color)        // Program.cs yazıldı.
         {
             _colorDal.Add(color);
         }
 
-        public void Delete(Color color)
+        public void Delete(Color color)     // Program.cs yazıldı.
         {
             _colorDal.Delete(color);
         }
 
-        public List<Color> GetAll()
+        public List<Color> GetAll()         // Program.cs yazıldı.
         {
             return _colorDal.GetAll();
         }
@@ -36,7 +36,7 @@ namespace Business.Concrete
             return _colorDal.Get(p=>p.Id == id);
         }
 
-        public void Update(Color color)
+        public void Update(Color color)     // Program.cs yazıldı.
         {
             _colorDal.Update(color);
         }
