@@ -15,6 +15,6 @@ namespace Business.Constants
         public static string MaintenanceTime = "Sistem bakımdadır";
         public static string CarDetailListed = "Araç detayları listelendi";
         public static string ListById = "Id'ye göre listelendi";
-        
+        internal static string InvalidName ="Araç adı 3 karakterden az olamaz";
     }
 }

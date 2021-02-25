@@ -11,7 +11,7 @@ namespace ConsoleUI
         {
             //Console.WriteLine("--------------------Car OP--------------------");
 
-            //CarManager carManager = new CarManager(new EfCarDal());
+            CarManager carManager = new CarManager(new EfCarDal());
 
             ////Add operation
             //carManager.Add(new Car { BrandId = 6, ColorId = 4, ModelYear = 2019, DailyPrice = 100, Description = "spor model" });
@@ -43,10 +43,22 @@ namespace ConsoleUI
 
             ////Detaya göre listeleme
 
-            //foreach (var car in carManager.GetCarDetails())
-            //{
-            //    Console.WriteLine(car.ModelYear + " " + car.DailyPrice + " " + car.BrandName + " " + car.ColorName);
-            //}
+            var result = carManager.GetCarDetails();
+            if (result.Success == true)
+            {
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine(car.ModelYear + " " + car.DailyPrice + " " + car.BrandName + " " + car.ColorName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+            
+            
+                
+            
 
             //foreach (var car in carManager.GetCarsByBrandId(3))   // BrandId 'ye göre bak. BrandId'si 3 olanın ;
             //{

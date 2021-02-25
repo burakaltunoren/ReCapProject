@@ -29,14 +29,14 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public List<Color> GetAll()         // Program.cs yazıldı.
+        public IDataResult<List<Color>> GetAll()         // Program.cs yazıldı.
         {
-            return _colorDal.GetAll();
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), true);
         }
 
-        public Color GetById(int id)
+        public IDataResult<Color> GetById(int id)
         {
-            return _colorDal.Get(p=>p.Id == id);
+            return new SuccessDataResult<Color>(_colorDal.Get(p=>p.Id == id), true);
         }
 
         public IResult Update(Color color)     // Program.cs yazıldı.
@@ -44,5 +44,7 @@ namespace Business.Concrete
             _colorDal.Update(color);
             return new SuccessResult();
         }
+
+
     }
 }
