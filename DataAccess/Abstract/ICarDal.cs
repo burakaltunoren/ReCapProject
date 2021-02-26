@@ -11,5 +11,6 @@ namespace DataAccess.Abstract
     {
         List<CarDetailDto> GetCarDetails();
         void Delete(int id);
+        
     }
 }

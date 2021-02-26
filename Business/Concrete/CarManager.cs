@@ -6,7 +6,6 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -37,7 +36,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour == 20)
+            if (DateTime.Now.Hour == 1)
             {
                 return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
             }
